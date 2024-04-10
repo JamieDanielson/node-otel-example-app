@@ -29,6 +29,7 @@ export const instrument = (serviceName: string) => {
     traceExporter: configureCompositeExporter([
       // set headers in env vars
       // OTEL_EXPORTER_OTLP_HEADERS: 'x-honeycomb-team=api-key'
+      // OTEL_EXPORTER_OTLP_ENDPOINT='https://api.honeycomb.io'
       new OTLPTraceExporter(),
       new ConsoleTraceLinkExporter(),
     ]),
